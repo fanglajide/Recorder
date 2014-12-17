@@ -18,7 +18,7 @@ import android.view.WindowManager.LayoutParams;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
-
+//bb
 public class RecordButton extends Button {
 
     public RecordButton(Context context) {
