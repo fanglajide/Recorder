@@ -12,32 +12,32 @@ import android.util.Log;
 
 public class RecordingActivity extends Activity {
 
-	private RecordButton mRecordButton = null;
+    private RecordButton mRecordButton = null;
 
-	@Override
-	public void onCreate(Bundle icicle) {
-		super.onCreate(icicle);
-		setContentView(R.layout.main);
-		mRecordButton = (RecordButton) findViewById(R.id.record_button);
+    @Override
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
+        setContentView(R.layout.main);
+        mRecordButton = (RecordButton) findViewById(R.id.record_button);
 
-		String path = Environment.getExternalStorageDirectory()
-				.getAbsolutePath()+"/com.dci.android.ssp";
-		
-		File file = new File(path);
-		if (!file.exists())
-			file.mkdirs();
-		path += "/mmmm.amr";
-		mRecordButton.setSavePath(path);
-		mRecordButton
-				.setOnFinishedRecordListener(new OnFinishedRecordListener() {
+        String path = Environment.getExternalStorageDirectory()
+                .getAbsolutePath() + "/com.dci.android.ssp";
 
-					@Override
-					public void onFinishedRecord(String audioPath) {
-						Log.i("RECORD!!!", "finished!!!!!!!!!! save to "
-								+ audioPath);
+        File file = new File(path);
+        if (!file.exists())
+            file.mkdirs();
+        path += "/mmmm.amr";
+        mRecordButton.setSavePath(path);
+        mRecordButton
+                .setOnFinishedRecordListener(new OnFinishedRecordListener() {
 
-					}
-				});
+                    @Override
+                    public void onFinishedRecord(String audioPath) {
+                        Log.i("RECORD!!!", "finished!!!!!!!!!! save to "
+                                + audioPath);
 
-	}
+                    }
+                });
+
+    }
 }

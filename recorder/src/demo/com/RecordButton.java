@@ -67,8 +67,10 @@ public class RecordButton extends Button {
     private void init() {
         volumeHandler = new ShowVolumeHandler();
     }
-    int x =0;
+
+    int x = 0;
     int y = 0;
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
 
@@ -87,14 +89,15 @@ public class RecordButton extends Button {
                 initDialogAndStartRecord();
                 break;
             case MotionEvent.ACTION_UP:
-                int dta= (int) Math.abs(event.getY()-y);
-                if (dta < getMeasuredHeight()){
+                int dta = (int) Math.abs(event.getY() - y);
+                if (dta < getMeasuredHeight()) {
                     finishRecord();
-                Toast.makeText(getContext(), dta+"", Toast.LENGTH_SHORT).show();}else{
+                    Toast.makeText(getContext(), dta + "", Toast.LENGTH_SHORT).show();
+                } else {
                     cancelRecord();
                     Toast.makeText(getContext(), "cancel", Toast.LENGTH_SHORT).show();
-            }
-            break;
+                }
+                break;
             case MotionEvent.ACTION_CANCEL:// 当手指移动到view外面，会cancel
                 cancelRecord();
                 Toast.makeText(getContext(), "cancel", Toast.LENGTH_SHORT).show();
