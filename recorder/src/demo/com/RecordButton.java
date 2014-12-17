@@ -19,7 +19,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 //bb
-//test master
+//ok
 public class RecordButton extends Button {
 
     public RecordButton(Context context) {
